@@ -7,56 +7,57 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="2575.6">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Pantstatus Råcksta&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>async function updateStatus() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const sheetId = "1dM1CJWLBETKHOWi3Ieq-aNiCSGc9OqnLS0a0nIgoqzk";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const res = await fetch(url);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const text = await res.text();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const json = JSON.parse(text.substr(47).slice(0, -2));</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const rows = json.table.rows;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const lastRow = rows[rows.length - 1];</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const status = lastRow.c[1].v;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const timestamp = new Date(lastRow.c[0].v);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const isWorking = status.toLowerCase().includes("funkar");</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.body.style.backgroundColor = isWorking ? "green" : "red";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("status").textContent =</p>
-<p class="p1"><span class="Apple-converted-space">        </span>`Senaste rapport: ${status} – ${timestamp.toLocaleString("sv-SE")}`;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>window.onload = updateStatus;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: background-color 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="status"&gt;Laddar status...&lt;/div&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Pantstatus Råcksta&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>async function updateStatus() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const sheetId = "1dM1CJWLBETKHOWi3Ieq-aNiCSGc9OqnLS0a0nIgoqzk";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const res = await fetch(url);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const text = await res.text();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const json = JSON.parse(text.substr(47).slice(0, -2));</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const rows = json.table.rows;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const lastRow = rows[rows.length - 1];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const status = lastRow.c[1].v;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const timestamp = new Date(lastRow.c[0].v);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const isWorking = status.toLowerCase().includes("funkar");</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.body.style.backgroundColor = isWorking ? "green" : "red";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById("status").textContent =</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>`Senaste rapport: ${status} – ${timestamp.toLocaleString("sv-SE")}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.onload = updateStatus;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-family: sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>height: 100vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 2em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transition: background-color 0.3s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="status"&gt;Laddar status...&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
